@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BAMP | Gorras</title>
+
+<style>
+html{
+    scroll-behavior:smooth;
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
+body{background:#f4f4f4;color:#333;}
+
+header{
+    background:#000;
+    color:white;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{font-size:32px;font-weight:bold;letter-spacing:3px;}
+
+.menu-btn{
+    font-size:30px;
+    color:white;
+    cursor:pointer;
+}
+
+#sidebar{
+    position:fixed;
+    top:0;
+    left:-250px;
+    width:250px;
+    height:100%;
+    background:black;
+    display:flex;
+    flex-direction:column;
+    padding-top:100px;
+    transition:.4s;
+    z-index:1000;
+}
+
+#sidebar a{
+    color:white;
+    text-decoration:none;
+    padding:20px 30px;
+    font-size:20px;
+}
+
+#sidebar.active{left:0;}
+
+.btn{
+    background:black;color:white;padding:14px 30px;border:none;
+    border-radius:30px;cursor:pointer;
+}
+
+.productos{padding:70px 8%;}
+.titulo{text-align:center;font-size:40px;margin-bottom:40px;}
+
+.grid{display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.card{
+    width: 100%;
+}
+
+
+.card{
+    background:white;border-radius:15px;overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.card img{width:100%;height:250px;object-fit:cover;}
+.info{padding:20px;text-align:center;}
+.precio{font-size:22px;font-weight:bold;margin:10px 0;}
+
+.nosotros{background:white;padding:70px 10%;text-align:center;}
+footer{background:black;color:white;text-align:center;padding:25px;margin-top:40px;}
+footer a{color:white;}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    <div class="logo">BAMP
+    <a href="carrito.html" style="color:white; text-decoration:none;">
+     📦 <span id="contador">0</span>
+    </a>
+    <button onclick="limpiarContador()" style="background: rgba(255, 255, 255, 0.1); border: none; color: #ffffff; font-size: 18px; line-height: 1; width: 28px; height: 28px; border-radius: 50%; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; transition: background 0.2s;" onmouseover="this.style.background='rgba(255, 77, 77, 0.2)'; this.style.color='#ff4d4d'" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.color='#ffffff'">
+    &times;
+</button>
+</div>
+
+    <nav id="sidebar">
+        <a href="index.html">Inicio</a>
+        <a href="Gorras.html">Gorras</a>
+        <a href="Hoddies.html">Hoddies</a>
+        <a href="MisteryBox.html">MisteryBox</a>
+
+    </nav>
+</header>
+
+<section class="productos">
+<h2 class="titulo">Gorras</h2>
+<div class="grid">
+
+<div class="card">
+<img src="https://i.ibb.co/0y3v3sBP/Gorra-1.jpg">
+<div class="info">
+<h3>31 Hats Hats “Electric Clouds”</h3>
+<div class="precio">$1,600 MXN</div>
+<button class="btn"
+onclick="agregarCarrito('Electric Clouds',1600)">
+        Agregar a la box</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://i.ibb.co/WmY60m3/Gorra-2.jpg">
+<div class="info">
+<h3>31 Hats "31 vs The World 2 Aniversario"</h3>
+<div class="precio">$1,600 MXN</div>
+<button class="btn"
+onclick="agregarCarrito('31 vs The World 2 Aniversario',1600)">
+        Agregar a la box</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://i.ibb.co/DgR3m3DK/Gorra-3.jpg">
+<div class="info">
+<h3>31 Hats “NY Crystals White”</h3>
+<div class="precio">$1,550 MXN</div>
+    <button class="btn"
+onclick="agregarCarrito('NY Crystals White',1550)">
+        Agregar a la box</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://i.ibb.co/WN4sySrC/Whats-App-Image-2026-06-23-at-8-35-56-PM.jpg">
+<div class="info">
+<h3>31 Hats X Backpack Boyz “Árabe”</h3>
+<div class="precio">$1,200 MXN</div>
+    <button class="btn"
+onclick="agregarCarrito('Árabe',1200)">
+        Agregar a la box</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://i.ibb.co/FqWn3yHb/Whats-App-Image-2026-06-23-at-8-37-16-PM.jpg">
+<div class="info">
+<h3>Rude Awakenings “Ultima cena”</h3>
+<div class="precio">$1,400 MXN</div>
+    <button class="btn"
+onclick="agregarCarrito('Ultima cena',1400)">
+        Agregar a la box</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://i.ibb.co/7JwW8ttW/Whats-App-Image-2026-06-23-at-8-39-04-PM.jpg">
+<div class="info">
+<h3>Cashed Out "Chrome"</h3>
+<div class="precio">$1,100 MXN</div>
+    <button class="btn"
+onclick="agregarCarrito('Chrome',1100)">
+        Agregar a la box</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://i.ibb.co/j9JgjL60/Whats-App-Image-2026-06-23-at-8-41-01-PM.jpg">
+<div class="info">
+<h3>Dreamer Hats “Katana”</h3>
+<div class="precio">$1,100 MXN</div>
+    <button class="btn"
+onclick="agregarCarrito('Katana',1100)">
+        Agregar a la box</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://i.ibb.co/qLPtBgV6/Whats-App-Image-2026-06-23-at-8-42-29-PM.jpg">
+<div class="info">
+<h3>31 Hats “Mago Universe”</h3>
+<div class="precio">$1,100 MXN</div>
+    <button class="btn"
+onclick="agregarCarrito('Mago Universe',1100)">
+        Agregar a la box</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://i.ibb.co/b5dFpjCG/Whats-App-Image-2026-06-23-at-8-43-07-PM.jpg">
+<div class="info">
+<h3>Cashed Out "Murakami CASH"</h3>
+<div class="precio">$1,100 MXN</div>
+    <button class="btn"
+onclick="agregarCarrito('Murakami CASH',1100)">
+        Agregar a la box</button>
+</div>
+
+</div>
+</section>
+<footer>
+<p>Instagram:<a href="https://www.instagram.com/bamphouse?igsh=NXFqMW15djViYnY4&utm_source=qr"> @bamphouse </a></p>
+<p>Facebook:<a href="https://www.facebook.com/share/18wAjXrGJf/?mibextid=wwXIfr" target="_blank"> Bamp House </a></p>
+
+</footer>
+
+<script>
+function toggleMenu(){
+    document.getElementById('sidebar').classList.toggle('active');
+    document.querySelector('.menu-btn').classList.toggle('active');
+}
+
+document.addEventListener('click', function(e){
+    const sidebar = document.getElementById('sidebar');
+    const menuBtn = document.querySelector('.menu-btn');
+
+    if (
+        sidebar.classList.contains('active') &&
+        !sidebar.contains(e.target) &&
+        !menuBtn.contains(e.target)
+    ) {
+        sidebar.classList.remove('active');
+        menuBtn.classList.remove('active');
+    }
+});
+</script>
+<script>
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+document.getElementById("contador").textContent = carrito.length;
+
+function agregarCarrito(nombre, precio){
+
+    carrito.push({nombre, precio});
+
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+
+    document.getElementById("contador").textContent = carrito.length;
+}
+</script>
+<script>
+    function limpiarContador() {
+        document.getElementById("contador").innerText = "0";
+    }
+</script>
+<script>
+function limpiarContador() {
+    carrito = []; // Vacía el arreglo
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    document.getElementById("contador").textContent = "0";
+}</script>
+</body>
+</html>
